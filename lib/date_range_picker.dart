@@ -110,7 +110,7 @@ class _DatePickerHeader extends StatelessWidget {
       case Orientation.portrait:
         width = _kMonthPickerPortraitWidth;
         height = _kDatePickerHeaderPortraitHeight;
-        padding = const EdgeInsets.symmetric(horizontal: 8.0);
+        padding = const EdgeInsets.only(left: 8.0, right: 8.0, top: 16.0);
         break;
       case Orientation.landscape:
         height = _kDatePickerLandscapeHeight;
@@ -1092,13 +1092,14 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
   }
 
   void _handleOk() {
-    List<DateTime?> result = [];
+    List<DateTime>? result = [];
     if (_selectedFirstDate != null) {
-      result.add(_selectedFirstDate);
+      result.add(_selectedFirstDate!);
       if (_selectedLastDate != null) {
-        result.add(_selectedLastDate);
+        result.add(_selectedLastDate!);
       }
     }
+    print(result.runtimeType);
     Navigator.pop(context, result);
   }
 
