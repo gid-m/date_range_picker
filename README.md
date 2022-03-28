@@ -19,7 +19,7 @@ Add to `pubspec.yaml` in `dependencies`
 ```
   date_range_picker:
     git:
-      url: https://github.com/gid-m/date_range_picker.git
+      url: git@github.com:gid-m/date_range_picker.git
       ref: main
 ```
 
